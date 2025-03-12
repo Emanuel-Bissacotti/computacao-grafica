@@ -1,0 +1,67 @@
+1) Mude a cor de fundo para branco
+glClearColor(1, 1, 1, 1)
+
+2) Mude a rotação do eixo Y para o eixo X e veja o que acontece
+glRotatef(r, 1, 0, 0) 
+
+3) Agora muda a rotação do eixo Y para o eixo X e Y e veja o que acontece
+glRotatef(r, 1, 1, 0) 
+
+4) Mude a cor do triangulo para preto
+glColor3f(0, 0, 0)
+
+5) Altere os vértices X, Y para um número maior e teste o triangulo
+glVertex3f(-1, 3, 0)
+glVertex3f(-3, -3, 0)
+glVertex3f(3, -3, 0)
+precisou ser alterado os valores do vertice de x e y para os 3 pontos
+
+6) Atualize o ângulo de rotação para girar mais rápido para o lado esquerdo
+Ou no sentido horário. (OBS: no código original ele gira anti-horário). O que precisou ser alterado?
+r -= 7
+- para alterar o sentido de rotação e 7 para maior velocidade
+
+7) Altere a posição inicial do triângulo. Atualmente, ele inicia em x = -1.5 e y = 0.
+Modifique para que ele comece centralizado (x = 0, y = 0).
+O que acontece com a exibição ao iniciar?
+x = 1
+y = 1
+Ele inicia no centro da tela
+
+8) Mude a escala inicial do triângulo
+No código original, ex = 1, ey = 1, ez = 1.
+Altere para ex = 2, ey = 2, ez = 2.
+Como a mudança da escala afeta a exibição do triângulo?
+ex = 2
+ey = 2
+ez = 2
+Ele fica maior na tela
+
+9) Modifique a movimentação do triângulo
+No código original, pressionar A move para a esquerda e D move para a direita.
+Inverta os controles para que A mova para a direita e D mova para a esquerda.
+Explique o que foi alterado no código para isso acontecer.
+if event.key == K_d:  # Se a tecla A for pressionada
+    x += -0.2  # Move o triângulo para a esquerda
+if event.key == K_a:  # Se a tecla D for pressionada
+    x += 0.2  # Move o triângulo para a direita
+Foi apenas modificada a verificação da letra precionada.
+
+
+10) Adicione um controle de zoom com as teclas "Z" e "X"
+O objetivo deste exercício é permitir que o usuário aproxime e afaste o triângulo usando as teclas:
+"Z" para aproximar (trazendo o triângulo para frente no eixo Z).
+"X" para afastar (empurrando o triângulo para trás no eixo Z).
+Dica: devemos criar uma variável para eixo Z nas Variáveis de posição do triangulo e passar ela na
+função da translação. No momento esta sendo passado apenas um valor.
+Lembrar de declarar a variável ‘zoon’ em variáveis ‘global’ e configurar a tecla K_z conforme as
+anteriores.
+
+if event.key == K_z:
+    ex += 0.2
+    ey += 0.2 
+    ez += 0.2 
+if event.key == K_x:
+    ex -= 0.2
+    ey -= 0.2
+    ez -= 0.2
